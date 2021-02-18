@@ -1,0 +1,8 @@
+install.packages("rpart.plot")
+library(rpart)
+library(rpart.plot)
+tree <- rpart(degrades ~ Camera + Processor, dtree)
+a<- data.frame(Camera = c("yes"), Processor= c("yes"))
+result <- predict(tree, a)
+print(result)
+rpart.plot(tree)
